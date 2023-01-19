@@ -28,6 +28,7 @@
 - Seleccionar todos de la tabla  contact
 
     - select * from contact;
+    
 
     <img src="./img/todo.png">
 
