@@ -4,6 +4,13 @@ from utils.db import db
 
 contacts = Blueprint("contacts", __name__)
 
+@contacts.route("/")
+def home():
+
+   
+    return render_template("/")
+
+
 
 @contacts.route("/new",methods =["POST"] )
 def add_contact():

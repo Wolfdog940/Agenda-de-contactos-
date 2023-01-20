@@ -14,3 +14,12 @@ class Contact(db.Model):
         self.email = email
         self.phone = phone
 
+    def serialize(self):
+        return{
+            "id":self.id,
+            "fullname":self.fullname,
+            "email":self.email,
+            "phone":self.phone
+
+        }
+
