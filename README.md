@@ -33,6 +33,19 @@
     <img src="./img/todo.png">
 
 
+<h1>Variables de entorno</h1>
+
+- instalar python-dotenv 
+  - pip install python-dotenv
+- Crear .env
+- Crear archivo de configuracion(config.py)
+- importar config en index.py
+
+
+<h1>Crear txt con dependencias</h1>
+
+- pip freeze > requirements.txt
+
 
 
 
