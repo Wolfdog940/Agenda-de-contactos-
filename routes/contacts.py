@@ -15,9 +15,13 @@ def home():
 @contacts.route("/new",methods =["POST"] )
 def add_contact():
 
-    fullname= request.form["fullname"]
-    email=request.form["email"]
-    phone=request.form["phone"]
+    fullname=request.json.get("fullname",None)
+    email=request.json.get("email",None)
+    phone=request.json.get("phone",None)
+
+    fullname = fullname
+    email = email
+    phone = phone
 
     if fullname is None:
         return jsonify({"msg":"Name is missing,write one please"}),404
@@ -49,10 +53,14 @@ def update(id):
 
 
 
-@contacts.route("/delete/<int:id>", methods=["DELETE"])
+@contacts.route("/delete/<int:id>", methods=['DELETE'])
 def delete(id):
 
     contact= Contact.query.get(id)
+    
+    if contact is None:
+        return jsonify({"msg": "Friend does not exist"}), 400
+
     db.session.delete(contact)
     db.session.commit()
 
