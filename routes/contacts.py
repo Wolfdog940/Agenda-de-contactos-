@@ -15,23 +15,24 @@ def home():
 @contacts.route("/new",methods =["POST"] )
 def add_contact():
 
-    fullname=request.json.get("fullname",None)
-    email=request.json.get("email",None)
-    phone=request.json.get("phone",None)
+    fullname=request.json.get("fullname", None)
+    email=request.json.get("email", None)
+    phone=request.json.get("phone", None)
 
-    fullname = fullname
-    email = email
-    phone = phone
+  
 
-    if fullname is None:
+    if not fullname:
         return jsonify({"msg":"Name is missing,write one please"}),404
-    if email is None :
+    if not email:
         return jsonify({"msg":"Email is missing , write one please"}),404
-    if phone is None :
+    if not phone:
         return jsonify({"msg":"Phone is missing , write one please"})
-        
+    
 
-    new_contact=Contact(fullname,email,phone)
+   
+    
+
+    new_contact=Contact(fullname=fullname,email=email,phone=phone)
 
     db.session.add(new_contact)
     db.session.commit()

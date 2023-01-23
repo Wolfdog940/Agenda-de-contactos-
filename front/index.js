@@ -27,6 +27,43 @@ async function allContacts() {
                 let parrafo2 = document.createElement("p");
                 let parrafo3 = document.createElement("p");
                 let borrar = document.createElement("button");
+                let edit = document.createElement("button");
+                edit.setAttribute("type","button")
+                edit.setAttribute("id","modal")
+
+                edit.setAttribute("class","btn btn-primary")
+                edit.setAttribute("data-bs-toggle","modal")
+                edit.setAttribute("data-bs-target","#exampleModal")
+
+
+                if(edit){
+
+                    var modal = document.getElementById("myModal")
+                    
+                    var span = document.getElementsByClassName("close")[0]
+                    var body= document.getElementsByTagName("body")
+                    
+                    edit.onclick = function(){
+                    
+                        modal.style.display ="block";
+                        body.style.position="static";
+                        body.style.height="100%";
+                        body.style.overflow="hidden"
+                    }
+                    
+                    span.onclick = function(){
+                    
+                        modal.style.display ="none";
+                        body.style.position="inherit";
+                        body.style.height="auto";
+                        body.style.overflow="hidden"
+                    }
+                    
+                    
+                    
+                    
+                    }
+
                 borrar.setAttribute("class","delete")
                 borrar.setAttribute("id",element.id)
                 let ul = document.getElementById("ul")
@@ -36,6 +73,8 @@ async function allContacts() {
                 lista.appendChild(parrafo2)
                 lista.appendChild(parrafo3)
                 lista.appendChild(borrar)
+                lista.appendChild(edit)
+
                 
 
                 parrafo.innerHTML = "Nombre" + " :" + " " + element.fullname
@@ -78,6 +117,7 @@ allContacts()
             "Content-Type": "application/json",
             'Access-Control-Allow-Origin': '*'
         },
+        
         body: JSON.stringify({
             fullname: fullname.value,
             email: email.value,
@@ -143,12 +183,7 @@ async function deleteContact(e) {
             console.log("Error al buscasr contactos", error);
         });
 
-
-
-
-    
-        
-    }
+}
 
    
 

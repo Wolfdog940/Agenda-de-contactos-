@@ -6,3 +6,58 @@
     
     
 }
+
+.btn::before{
+    font-family: "bootstrap-icons";
+    
+    content:'\F4C8' ;
+
+}
+
+
+.modalContainer{
+    display: none ;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 600px; 
+    height: 450px; 
+    overflow: auto;
+}
+
+.modalContainer .modalContent{
+    background-color: rgb(108, 223, 137);
+    margin: auto;
+    border: 1px solid rgb(13, 119, 13);
+    width: 75%;
+    height: 75%;
+}
+
+
+.modalContainer .close{
+    color: red;
+    float: right;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.modalContainer .close:hover , .close:focus{
+
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+.close::before{
+    font-family: "bootstrap-icons";
+    
+    content:'\F623' ;
+    
+}
+.save::before{
+    font-family: "bootstrap-icons";
+    
+    content:'\F527' ; 
+}
