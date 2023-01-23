@@ -29,8 +29,8 @@ async function allContacts() {
                 let borrar = document.createElement("button");
                 borrar.setAttribute("class","delete")
                 borrar.setAttribute("id",element.id)
-                borrar.addEventListener("click",(e)=>deleteContact(e))
                 let ul = document.getElementById("ul")
+                borrar.addEventListener("click",deleteContact)
 
                 lista.appendChild(parrafo)
                 lista.appendChild(parrafo2)
@@ -116,39 +116,36 @@ saveContact()
 
 
 
-function deleteContact(e) {
-    
-    let borrar =document.getElementsByClassName("delete")
-    
-    console.log(borrar.id)
-    
-       /*borrar.addEventListener("click",async()=>{
-        
-            
-    
-            return await fetch("http://127.0.0.1:5000/delete/"+id, {
-    
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                'Access-Control-Allow-Origin': '*'
-            },
-            body: JSON.stringify(id),
+async function deleteContact(e) {
+    e.preventDefault();
+    await fetch("http://127.0.0.1:5000/delete/"+e.target.id, {
+
+
+        method: "DELETE",
+        headers: {
+
+            "Content-Type": "application/json",
+            'Access-Control-Allow-Origin': '*'
+        },
+    })
+        .then((resp) => {
+            return resp.json(); // (regresa una promesa) will try to parse the result as json as return a promise that you can .then for results
         })
-            .then((resp) => {
-                return resp.json(); // (regresa una promesa) will try to parse the result as json as return a promise that you can .then for results
-            })
-            .then((data) => {
-                
+        .then((data) => {
+
+                console.log("contact has been deleted")
                 window.location.reload();
             })
-             .catch((error) => {
-                console.log("Error al borrar el usuario", error);
-            });
-    
-    
+
         
-        })*/
+
+        .catch((error) => {
+            console.log("Error al buscasr contactos", error);
+        });
+
+
+
+
     
         
     }
