@@ -5,7 +5,7 @@ from sqlalchemy import Table, Column, Integer, String
 
 class Contact(db.Model):
     id = db.Column(db.Integer,primary_key=True)
-    fullname = db.Column(db.String(100))
+    fullname = db.Column(db.String(12))
     email = db.Column(db.String(100))
     phone = db.Column(db.String(100))
 

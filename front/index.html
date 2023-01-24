@@ -15,13 +15,17 @@
 <body>
 
     
-        <input type="text" id="fullname" placeholder="Write your fullname">
-        <input type="text" id="email" placeholder="Write your email">
-        <input type="text" id="phone" placeholder="Write your phone">
+        <div class="d-flex justify-content-center mt-5">
+          <input type="text" class="rounded" id="fullname" placeholder="Write your fullname">
+          <input type="text" class="rounded" id="email" placeholder="Write your email">
+          <input type="text" class="rounded" id="phone" placeholder="Write your phone">
+          <button id ="save" class="save rounded"></button>
+        </div>
 
-        <button id ="save">Save</button>
-
-       <ul id="ul"></ul>
+       <ul id="ul" class="mt-5">
+        
+        </div>
+       </ul>
       
      
       
@@ -29,23 +33,24 @@
       <div id="myModal" class="modalContainer">
         <div class ="modalContent">
           
-          <h2>modal</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur reiciendis eligendi, rerum, quae quo similique voluptatem dicta culpa tempore repellendus enim nostrum modi voluptatum cupiditate est nihil nulla odit temporibus.
-          t quisquam aut expedita labore adipisci unde beatae reiciendis sapiente facilis aliquid asperiores aliquam explicabo officiis alias, eveniet quas modi. Asperiores, unde perferendis?
-          </p>
+          <h2>Update your contact</h2>
+          <input type="text" id ="modalName">
+          <input type="text" id="modalEmail">
+          <input type="text" id="modalPhone">
           <div><span class="close"></span>
-            <button class="save"></button></div>
+            <button class="update" id="update"></button></div>
         </div>
       </div>
 
 
     
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    
+
+   
     <script src="index.js"></script>
-    <script src="modal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+   
 
    
 
