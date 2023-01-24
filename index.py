@@ -1,6 +1,7 @@
 from app import app
 from utils.db import db
 
+
 #index.py va arrancar la aplicacion 
 db.init_app(app)
 
